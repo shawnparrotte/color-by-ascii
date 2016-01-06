@@ -323,6 +323,10 @@ $(document).ready(function(){
           splitWaves[j][k] = "<span class='waves-period'>.</span>"
         } else if (splitWaves[j][k] === "c"){
           splitWaves[j][k] = "<span class='waves-c'>c</span>"
+        } else if (splitWaves[j][k] === "'"){
+          splitWaves[j][k] = "<span class='waves-apost'>'</span>"
+        } else if (splitWaves[j][k] === ","){
+          splitWaves[j][k] = "<span class='waves-comma'>,</span>"
         }
       }
     }
@@ -465,6 +469,22 @@ $("#picker-c").spectrum({
   change: function(color){
     var x = color.toHexString();
     $(".waves-c").css("color", x);
+  }
+});
+
+$("#picker-comma").spectrum({
+  color: "#FFF",
+  change: function(color){
+    var x = color.toHexString();
+    $(".waves-comma").css("color", x);
+  }
+});
+
+$("#picker-apost").spectrum({
+  color: "#FFF",
+  change: function(color){
+    var x = color.toHexString();
+    $(".waves-apost").css("color", x);
   }
 });
 
